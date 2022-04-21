@@ -1,7 +1,7 @@
-import os
+import os,sys
 import random
 import xml.etree.ElementTree as ET
-
+sys.path.append('/content/efficientnet-yolov3-pytorch')
 from utils.utils import get_classes
 
 #--------------------------------------------------------------------------------------------------------------------------------#

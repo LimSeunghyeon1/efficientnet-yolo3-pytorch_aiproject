@@ -1,7 +1,8 @@
 #-------------------------------------#
 #       对数据集进行训练
 #-------------------------------------#
-import os
+import os,sys
+sys.path.append('/content/efficientnet-yolov3-pytorch')
 
 import numpy as np
 import torch

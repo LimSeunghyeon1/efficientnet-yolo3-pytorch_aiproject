@@ -1,6 +1,6 @@
-import os
+import os,sys
 import xml.etree.ElementTree as ET
-
+sys.path.append('/content/efficientnet-yolov3-pytorch')
 from PIL import Image
 from tqdm import tqdm
 
