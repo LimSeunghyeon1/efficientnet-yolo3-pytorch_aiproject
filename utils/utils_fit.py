@@ -9,7 +9,7 @@ import argparse
 #pth_name = "min_loss"
 
 parser = argparse.ArgumentParser()
-parser.add_argument('pth_name',default='min_loss')
+parser.add_argument('--pth_name',default='min_loss')
 args = parser.parse_args()
 pth_name = args.pth_name
 print()
@@ -132,7 +132,7 @@ def fit_one_epoch(model_train, model, yolo_loss, loss_history, optimizer, epoch,
           print("Min Val Loss changed to %.3f -> %.3f" %(min_loss , val_loss / epoch_step_val))
           min_loss = val_loss / epoch_step_val
           torch.save(model.state_dict(), f'/content/drive/MyDrive/AIproject/lsh/{pth_name}.pth')
-        
+          torch.save(model.state_dict(), f'model_data/{pth_name}.pth')
         print('Total Loss: %.3f || Val Loss: %.3f ' % (loss / epoch_step, val_loss / epoch_step_val))
         if (epoch + 1) % save_period == 0 or epoch + 1 == Epoch:
             torch.save(model.state_dict(), os.path.join(save_dir, "ep%03d-loss%.3f-val_loss%.3f.pth" % (epoch + 1, loss / epoch_step, val_loss / epoch_step_val)))
